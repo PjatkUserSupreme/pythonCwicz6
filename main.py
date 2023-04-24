@@ -1,16 +1,22 @@
-# This is a sample Python script.
+import MyLinkedList
+import Element
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+lista = MyLinkedList.MyLinkedList()
+e1 = Element.Element("1")
+e2 = Element.Element("2")
+e3 = Element.Element("3")
+e4 = Element.Element("4")
+e5 = Element.Element("5")
 
+lista.append(e1)
+lista.append(e2)
+lista.append(e3)
+lista.append(e4)
+lista.append(e5)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+print(lista.__str__())
 
+print(lista.get(1).data)
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+lista.delete(1)
+print(lista.__str__())
