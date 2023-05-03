@@ -31,6 +31,7 @@ class MyLinkedList:
     def delete(self, e):
         if e == 0:
             self.head = self.head.nextE
+            self.size = self.size - 1
             return 0
 
         i = 0
@@ -43,6 +44,7 @@ class MyLinkedList:
             i += 1
 
         previous.nextE = tmp.nextE
+        self.size = self.size - 1
         return 0
 
     def append(self, e, func=None):
@@ -62,14 +64,16 @@ class MyLinkedList:
             self.size = self.size + 1
             return 0
         tmp = self.head
-        while i < self.size:
+        while tmp.nextE is not None:
             if func(e.data, tmp.nextE.data):
                 e.nextE = tmp.nextE
                 tmp.nextE = e
                 self.size = self.size + 1
                 return 0
+            tmp = tmp.nextE
 
         self.tail.nextE = e
+        self.tail = e
         self.size = self.size + 1
         return 0
 
